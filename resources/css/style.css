@@ -1,0 +1,40 @@
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f7f4ef; /* warm cream color */
+    }
+    .side-bar {
+        width: 260px;
+        background-color: #5a3e36; /* coffee brown */
+        color: #fff;
+        min-height: 100vh;
+        border-right: 3px solid #a67c52;
+    }
+    .side-bar h6 {
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    .side-bar a {
+        color: #fff;
+    }
+    .side-bar a:hover {
+        background: #6a4b3f;
+        border-radius: 8px;
+    }
+    .main-div {
+        flex: 1;
+        background: #fff;
+        border-radius: 8px;
+        padding: 15px;
+    }
+    .fa-bars {
+        cursor: pointer;
+    }
+    /* Button look */
+    .btn-coffee {
+        background: #a67c52;
+        color: #fff;
+        border: none;
+    }
+    .btn-coffee:hover {
+        background: #c49b79;
+    }
