@@ -12,7 +12,7 @@ class MenuController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $menus = Menu::all();
+        $menus = Menu::latest()->paginate(1);
 
         return view('admin.menu.index',[
             'categories' => $categories,

@@ -11,19 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('addons', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->unsignedBigInteger('cat_id')->nullable();
-            $table->text('detail');
-            $table->string('image');
+            $table->string('name');
+            $table->unsignedBigInteger('addcat_id')->nullable();
             $table->integer('price');
             $table->timestamps();
 
-            $table->foreign('cat_id')
-                  ->references('id')->on('categories')
+            $table->foreign('addcat_id')
+                  ->references('id')->on('addon_categories')
                   ->onDelete('cascade');
-                });
+        });
     }
 
     /**
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('addons');
     }
 };

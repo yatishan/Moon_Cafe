@@ -31,6 +31,9 @@
                 <input type="submit" class="btn py-2 px-4 my-3 btn-coffee" value="Save">
             </div>
         </form>
+        <div class="m-3">
+             {{ $menus->links() }}
+        </div>
         <table class="table table-bordered m-3 table-striped ">
             <thead>
                 <tr>

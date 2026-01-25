@@ -30,6 +30,15 @@
             <a href="{{ url('/admin/menu') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-th-list me-3"></i> Coffee & Cakes
             </a>
+            <a href="{{ url('/admin/addonCategory') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+                <i class="fa-solid fa-table-cells me-3"></i> Addon Category
+            </a>
+            <a href="{{ url('/admin/addon') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+                <i class="fa-solid fa-calendar-plus me-3"></i> Addon
+            </a>
+            <a href="{{ url('/admin/table') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+                <i class="fa-solid fa-table me-3"></i> Table
+            </a>
             <a href="{{ url('/admin/product') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-mug-hot me-3"></i> Payments
             </a>
