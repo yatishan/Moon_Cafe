@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AddonCategoryController;
 use App\Http\Controllers\Admin\AddonController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MenuAddonCategoryController;
 use App\Http\Controllers\Admin\MenuAddonController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\TableController;
@@ -54,10 +55,10 @@ Route::get('/admin/addon/edit/{id}',[AddonController::class,'edit']);
 Route::post('/admin/addon/update/{id}',[AddonController::class,'update']);
 //end addon
 
-// menu addon
-Route::get('/admin/menu_addon', [MenuAddonController::class, "index"]);
-Route::post('/admin/menu_addon', [MenuAddonController::class, "create"]);
-Route::get('/admin/menu_addon/delete/{id}',[MenuAddonController::class,'delete']);
-Route::get('/admin/menu_addon/edit/{id}',[MenuAddonController::class,'edit']);
-Route::post('/admin/menu_addon/update/{id}',[MenuAddonController::class,'update']);
-//end menu addon
+// menu addon category
+Route::get('/admin/menu_addon_category', [MenuAddonCategoryController::class, "index"]);
+Route::post('/admin/menu_addon_category', [MenuAddonCategoryController::class, "create"]);
+Route::get('/admin/menu_addon_category/delete/{id}',[MenuAddonCategoryController::class,'delete']);
+Route::get('/admin/menu_addon_category/edit/{id}',[MenuAddonCategoryController::class,'edit']);
+Route::post('/admin/menu_addon_category/update/{id}',[MenuAddonCategoryController::class,'update']);
+//end menu addon category

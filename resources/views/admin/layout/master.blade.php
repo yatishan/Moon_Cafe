@@ -36,6 +36,9 @@
             <a href="{{ url('/admin/addon') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-calendar-plus me-3"></i> Addon
             </a>
+            <a href="{{ url('/admin/menu_addon_category') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+                <i class="fa-solid fa-calendar-plus me-3"></i> Menu Addon Category
+            </a>
             <a href="{{ url('/admin/table') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-table me-3"></i> Table
             </a>

@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('menu_addons', function (Blueprint $table) {
+        Schema::create('menu_addon_categories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('menu_id')->nullable();
-            $table->unsignedBigInteger('add_id')->nullable();
+            $table->unsignedBigInteger('addcat_id')->nullable();
             $table->timestamps();
             $table->foreign('menu_id')
                   ->references('id')->on('menus')
                   ->onDelete('cascade');
-            $table->foreign('add_id')
-                  ->references('id')->on('addons')
+            $table->foreign('addcat_id')
+                  ->references('id')->on('addon_categories')
                   ->onDelete('cascade');
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('menu_addons');
+        Schema::dropIfExists('menu_addon_categories');
     }
 };
