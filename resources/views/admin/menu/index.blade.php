@@ -16,7 +16,7 @@
             {{ session('info') }}
         </div>
         @endif
-        <form class="m-3" action="{{ url('/admin/menu') }}" enctype="multipart/form-data" method="post" >
+        <form class="m-3" action="{{ url('/admin/menu/list') }}" enctype="multipart/form-data" method="post" >
             @csrf
             <div>
                 <input type="text" name="name" class="form-control mb-3 " placeholder="menu name" value="{{ old('name') }}">

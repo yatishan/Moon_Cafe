@@ -5,60 +5,75 @@ use App\Http\Controllers\Admin\AddonController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MenuAddonCategoryController;
-use App\Http\Controllers\Admin\MenuAddonController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\User\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[HomeController::class,"index"]);
+Route::get('/', [HomeController::class, "index"]);
 
-Route::get('/admin',[AdminController::class,"index"]);
+// Route::middleware(['auth'])->group(function () {
 
-//category
-Route::get('/admin/category', [CategoryController::class, "index"]);
-Route::post('/admin/category', [CategoryController::class, "create"]);
-Route::get('/admin/category/delete/{id}',[CategoryController::class,'delete']);
-Route::get('/admin/category/edit/{id}',[CategoryController::class,'edit']);
-Route::post('/admin/category/update/{id}',[CategoryController::class,'update']);
-//end category
+    Route::get('/admin', [AdminController::class, "index"]);
 
-//menu
-Route::get('/admin/menu', [MenuController::class, "index"]);
-Route::post('/admin/menu', [MenuController::class, "create"]);
-Route::get('/admin/menu/delete/{id}',[MenuController::class,'delete']);
-Route::get('/admin/menu/edit/{id}',[MenuController::class,'edit']);
-Route::post('/admin/menu/update/{id}',[MenuController::class,'update']);
-//endmenu
+    //category
+    Route::group(['prefix' => 'admin/category'], function () {
+        Route::get('list', [CategoryController::class, "index"]);
+        Route::post('list', [CategoryController::class, "create"]);
+        Route::get('delete/{id}', [CategoryController::class, 'delete']);
+        Route::get('edit/{id}', [CategoryController::class, 'edit']);
+        Route::post('update/{id}', [CategoryController::class, 'update']);
+    });
 
-//table
-Route::get('/admin/table', [TableController::class, "index"]);
-Route::post('/admin/table', [TableController::class, "create"]);
-Route::get('/admin/table/delete/{id}', [TableController::class, "delete"]);
-Route::get('/admin/table/edit/{id}',[TableController::class,'edit']);
-Route::post('/admin/table/update/{id}',[TableController::class,"update"]);
-//endtable
+    //end category
 
-// addon category
-Route::get('/admin/addonCategory', [AddonCategoryController::class, "index"]);
-Route::post('/admin/addonCategory', [AddonCategoryController::class, "create"]);
-Route::get('/admin/addonCategory/delete/{id}',[AddonCategoryController::class,'delete']);
-Route::get('/admin/addonCategory/edit/{id}',[AddonCategoryController::class,'edit']);
-Route::post('/admin/addonCategory/update/{id}',[AddonCategoryController::class,'update']);
-//end addon category
+    //menu
+    Route::group(['prefix' => 'admin/menu'], function () {
+        Route::get('list', [MenuController::class, "index"]);
+        Route::post('list', [MenuController::class, "create"]);
+        Route::get('delete/{id}', [MenuController::class, 'delete']);
+        Route::get('edit/{id}', [MenuController::class, 'edit']);
+        Route::post('update/{id}', [MenuController::class, 'update']);
+    });
+    //endmenu
 
-// addon
-Route::get('/admin/addon', [AddonController::class, "index"]);
-Route::post('/admin/addon', [AddonController::class, "create"]);
-Route::get('/admin/addon/delete/{id}',[AddonController::class,'delete']);
-Route::get('/admin/addon/edit/{id}',[AddonController::class,'edit']);
-Route::post('/admin/addon/update/{id}',[AddonController::class,'update']);
-//end addon
+    //table
+    Route::group(['prefix' => 'admin/table'], function () {
+        Route::get('list', [TableController::class, "index"]);
+        Route::post('list', [TableController::class, "create"]);
+        Route::get('delete/{id}', [TableController::class, "delete"]);
+        Route::get('edit/{id}', [TableController::class, 'edit']);
+        Route::post('update/{id}', [TableController::class, "update"]);
+    });
+    //endtable
 
-// menu addon category
-Route::get('/admin/menu_addon_category', [MenuAddonCategoryController::class, "index"]);
-Route::post('/admin/menu_addon_category', [MenuAddonCategoryController::class, "create"]);
-Route::get('/admin/menu_addon_category/delete/{id}',[MenuAddonCategoryController::class,'delete']);
-Route::get('/admin/menu_addon_category/edit/{id}',[MenuAddonCategoryController::class,'edit']);
-Route::post('/admin/menu_addon_category/update/{id}',[MenuAddonCategoryController::class,'update']);
-//end menu addon category
+    // addon category
+    Route::group(['prefix' => 'admin/addonCategory'], function () {
+        Route::get('list', [AddonCategoryController::class, "index"]);
+        Route::post('list', [AddonCategoryController::class, "create"]);
+        Route::get('delete/{id}', [AddonCategoryController::class, 'delete']);
+        Route::get('edit/{id}', [AddonCategoryController::class, 'edit']);
+        Route::post('update/{id}', [AddonCategoryController::class, 'update']);
+    });
+    //end addon category
+
+    // addon
+    Route::group(['prefix' => 'admin/addon'], function () {
+        Route::get('list', [AddonController::class, "index"]);
+        Route::post('list', [AddonController::class, "create"]);
+        Route::get('delete/{id}', [AddonController::class, 'delete']);
+        Route::get('edit/{id}', [AddonController::class, 'edit']);
+        Route::post('update/{id}', [AddonController::class, 'update']);
+    });
+    //end addon
+
+    // menu addon category
+    Route::group(['prefix' => 'admin/menu_addon_category'], function () {
+        Route::get('list', [MenuAddonCategoryController::class, "index"]);
+        Route::post('list', [MenuAddonCategoryController::class, "create"]);
+        Route::get('delete/{id}', [MenuAddonCategoryController::class, 'delete']);
+        Route::get('edit/{id}', [MenuAddonCategoryController::class, 'edit']);
+        Route::post('update/{id}', [MenuAddonCategoryController::class, 'update']);
+    });
+    //end menu addon category
+// });

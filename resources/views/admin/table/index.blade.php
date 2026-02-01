@@ -16,7 +16,7 @@
             {{ session('info') }}
         </div>
         @endif
-        <form class="m-3" action="{{ url('/admin/table') }}"  method="post" >
+        <form class="m-3" action="{{ url('/admin/table/list') }}"  method="post" >
             @csrf
             <div>
                 <input type="text" name="name" class="form-control mb-3 " placeholder="table name" value="{{ old('name') }}">

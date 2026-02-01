@@ -16,7 +16,7 @@
             {{ session('info') }}
         </div>
         @endif
-        <form class="m-3" action="{{ url('/admin/addonCategory') }}" method="post">
+        <form class="m-3" action="{{ url('/admin/addonCategory/list') }}" method="post">
             @csrf
             <div>
                 <input type="" name="name" class="form-control " placeholder="addon category" value="{{ old('name') }}">

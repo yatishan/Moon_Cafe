@@ -16,7 +16,7 @@
                 {{ session('info') }}
             </div>
         @endif
-        <form class="m-3" action="{{ url('/admin/menu_addon_category') }}" enctype="multipart/form-data" method="post">
+        <form class="m-3" action="{{ url('/admin/menu_addon_category/list') }}" enctype="multipart/form-data" method="post">
             @csrf
             <div>
                 <select name="menu_id" class="form-select mb-3">

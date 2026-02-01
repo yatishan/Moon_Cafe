@@ -16,7 +16,7 @@
             {{ session('info') }}
         </div>
         @endif
-        <form class="m-3" action="{{ url('/admin/category') }}" method="post">
+        <form class="m-3" action="{{ url('/admin/category/list') }}" method="post">
             @csrf
             <div>
                 <input type="" name="cat_name" class="form-control " placeholder="menu category" value="{{ old('cat_name') }}">

@@ -24,33 +24,33 @@
             <a href="{{ url('/admin/category') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-user me-3"></i> Users
             </a>
-            <a href="{{ url('/admin/category') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+            <a href="{{ url('/admin/category/list') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-list me-3"></i> Menu Categories
             </a>
-            <a href="{{ url('/admin/menu') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
-                <i class="fa-solid fa-th-list me-3"></i> Coffee & Cakes
+            <a href="{{ url('/admin/menu/list') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+                <i class="fa-solid fa-th-list me-3"></i> Menu
             </a>
-            <a href="{{ url('/admin/addonCategory') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+            <a href="{{ url('/admin/addonCategory/list') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-table-cells me-3"></i> Addon Category
             </a>
-            <a href="{{ url('/admin/addon') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+            <a href="{{ url('/admin/addon/list') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-calendar-plus me-3"></i> Addon
             </a>
-            <a href="{{ url('/admin/menu_addon_category') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+            <a href="{{ url('/admin/menu_addon_category/list') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-calendar-plus me-3"></i> Menu Addon Category
             </a>
-            <a href="{{ url('/admin/table') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+            <a href="{{ url('/admin/table/list') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-table me-3"></i> Table
             </a>
-            <a href="{{ url('/admin/product') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+            <a href="{{ url('/admin/product/list') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-mug-hot me-3"></i> Payments
             </a>
 
             <!-- Orders & Feedback -->
-            <a href="{{ url('/admin/orders') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+            <a href="{{ url('/admin/orders/list') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-cart-shopping me-3"></i> Orders
             </a>
-            <a href="{{ url('/admin/messages') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
+            <a href="{{ url('/admin/messages/list') }}" class="d-flex align-items-center px-2 py-3 text-decoration-none">
                 <i class="fa-solid fa-comment-dots me-3"></i> Reviews
             </a>
         </div>
