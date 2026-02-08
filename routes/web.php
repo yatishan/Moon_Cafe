@@ -76,4 +76,7 @@ Route::get('/', [HomeController::class, "index"]);
         Route::post('update/{id}', [MenuAddonCategoryController::class, 'update']);
     });
     //end menu addon category
-// });
+
+    //user
+    Route::get('/menu',[HomeController::class,'menu']);
+    // end user
