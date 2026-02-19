@@ -8,7 +8,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
                     <li class="nav-item"><a class="nav-link active text-warning" href="#">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#booking">Booking</a></li>
@@ -49,16 +49,16 @@
     <section class="py-5">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="menu-container">
-
+                @foreach ($menus as $menu)
                 <div class="col menu-item" data-category="burger">
                     <div class="card h-100 border-0 shadow-sm food-card">
-                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Classic Burger">
+                        <img src="storage/images/{{ $menu->image }}" class="card-img-top" alt="Classic Burger">
                         <div class="card-body">
                             <div class="d-flex justify-content-between mb-2">
-                                <h5 class="card-title fw-bold">Classic Burger</h5>
-                                <span class="text-warning fw-bold">$12.99</span>
+                                <h5 class="card-title fw-bold">{{ $menu->title }}</h5>
+                                <span class="text-warning fw-bold">{{ $menu->price }}</span>
                             </div>
-                            <p class="card-text text-muted small">Juicy beef patty with fresh lettuce, tomatoes, and house sauce.</p>
+                            <p class="card-text text-muted small">J{{ $menu->detail }}</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
                                 <button class="btn btn-sm btn-dark rounded-pill px-3">Add to Cart</button>
@@ -66,6 +66,8 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
+
 
                 <div class="col menu-item" data-category="pizza">
                     <div class="card h-100 border-0 shadow-sm food-card">

@@ -18,6 +18,9 @@ class HomeController extends Controller
 
     public function menu()
     {
-        return view('user.main.menu');
+        $menus = Menu::all();
+        return view('user.main.menu',[
+            "menus" => $menus
+        ]);
     }
 }
