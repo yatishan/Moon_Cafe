@@ -4,7 +4,7 @@
         <div class="container">
             <h1 class="display-3 fw-bold mb-4">Delicious Food, <br> Delivered To You</h1>
             <p class="lead mb-5">Fresh ingredients, tasty meals, and the fastest delivery in town.</p>
-            <a href="#menu" class="btn btn-warning btn-lg me-3 text-dark fw-bold">Order Now</a>
+            <a href="/menu" class="btn btn-warning btn-lg me-3 text-dark fw-bold">Order Now</a>
             <a href="#booking" class="btn btn-outline-light btn-lg fw-bold">Book a Table</a>
         </div>
     </section>

@@ -61,32 +61,6 @@
         </div>
     </footer>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- <script>
-     // 1. Search Functionality
-        document.getElementById('searchInput').addEventListener('keyup', function() {
-            let filter = this.value.toLowerCase();
-            let items = document.querySelectorAll('.menu-item');
-
-            items.forEach(function(item) {
-                let title = item.querySelector('.card-title').innerText.toLowerCase();
-                if (title.includes(filter)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-
-        // 2. Category Filter Functionality
-        function filterCategory(category) {
-            let items = document.querySelectorAll('.menu-item');
-            let buttons = document.querySelectorAll('.category-btn');
-
-            // Update active button style
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-        }
- </script>
 </body>
 </html>
 

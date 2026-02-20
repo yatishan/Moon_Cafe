@@ -79,4 +79,5 @@ Route::get('/', [HomeController::class, "index"]);
 
     //user
     Route::get('/menu',[HomeController::class,'menu']);
+    Route::get('/menu/{cat_id}',[HomeController::class,'category']);
     // end user

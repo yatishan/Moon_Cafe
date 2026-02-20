@@ -35,11 +35,15 @@
                     </div>
 
                     <div class="d-flex flex-wrap justify-content-center gap-2" id="category-filters">
-                        <button class="btn btn-outline-dark rounded-pill px-4 category-btn active" onclick="filterCategory('all')">All</button>
-                        <button class="btn btn-outline-dark rounded-pill px-4 category-btn" onclick="filterCategory('burger')">Burgers</button>
-                        <button class="btn btn-outline-dark rounded-pill px-4 category-btn" onclick="filterCategory('pizza')">Pizza</button>
-                        <button class="btn btn-outline-dark rounded-pill px-4 category-btn" onclick="filterCategory('pasta')">Pasta</button>
-                        <button class="btn btn-outline-dark rounded-pill px-4 category-btn" onclick="filterCategory('drinks')">Drinks</button>
+                        <a href="/menu">
+                            <button class="btn btn-outline-dark rounded-pill px-4 category-btn active" >All</button>
+                        </a>
+                        @foreach ($categories as $cat)
+                        <a href="{{ url('/menu',$cat->id) }}">
+                             <button class="btn btn-outline-dark rounded-pill px-4 category-btn" >{{ $cat->title }}</button>
+                        </a>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
@@ -52,7 +56,7 @@
                 @foreach ($menus as $menu)
                 <div class="col menu-item" data-category="burger">
                     <div class="card h-100 border-0 shadow-sm food-card">
-                        <img src="storage/images/{{ $menu->image }}" class="card-img-top" alt="Classic Burger">
+                        <img src="{{ asset('storage/images/' . $menu->image) }}" class="card-img-top" alt="Classic Burger">
                         <div class="card-body">
                             <div class="d-flex justify-content-between mb-2">
                                 <h5 class="card-title fw-bold">{{ $menu->title }}</h5>
@@ -67,93 +71,6 @@
                     </div>
                 </div>
                 @endforeach
-
-
-                <div class="col menu-item" data-category="pizza">
-                    <div class="card h-100 border-0 shadow-sm food-card">
-                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Margherita Pizza">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h5 class="card-title fw-bold">Margherita Pizza</h5>
-                                <span class="text-warning fw-bold">$15.50</span>
-                            </div>
-                            <p class="card-text text-muted small">Traditional Italian dough with tomato sauce and mozzarella.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="text-warning"><i class="fas fa-star"></i> 4.9</span>
-                                <button class="btn btn-sm btn-dark rounded-pill px-3">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col menu-item" data-category="pasta">
-                    <div class="card h-100 border-0 shadow-sm food-card">
-                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Carbonara">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h5 class="card-title fw-bold">Pasta Carbonara</h5>
-                                <span class="text-warning fw-bold">$14.00</span>
-                            </div>
-                            <p class="card-text text-muted small">Creamy sauce with pancetta, egg, and parmesan cheese.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="text-warning"><i class="fas fa-star"></i> 4.7</span>
-                                <button class="btn btn-sm btn-dark rounded-pill px-3">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col menu-item" data-category="burger">
-                    <div class="card h-100 border-0 shadow-sm food-card">
-                        <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Chicken Burger">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h5 class="card-title fw-bold">Crispy Chicken</h5>
-                                <span class="text-warning fw-bold">$11.50</span>
-                            </div>
-                            <p class="card-text text-muted small">Fried chicken breast with coleslaw and spicy mayo.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="text-warning"><i class="fas fa-star"></i> 4.5</span>
-                                <button class="btn btn-sm btn-dark rounded-pill px-3">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col menu-item" data-category="drinks">
-                    <div class="card h-100 border-0 shadow-sm food-card">
-                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Lemonade">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h5 class="card-title fw-bold">Fresh Lemonade</h5>
-                                <span class="text-warning fw-bold">$5.00</span>
-                            </div>
-                            <p class="card-text text-muted small">Freshly squeezed lemons with mint and ice.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="text-warning"><i class="fas fa-star"></i> 4.9</span>
-                                <button class="btn btn-sm btn-dark rounded-pill px-3">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                 <div class="col menu-item" data-category="pizza">
-                    <div class="card h-100 border-0 shadow-sm food-card">
-                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Pepperoni Pizza">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h5 class="card-title fw-bold">Pepperoni Pizza</h5>
-                                <span class="text-warning fw-bold">$16.00</span>
-                            </div>
-                            <p class="card-text text-muted small">Loaded with spicy pepperoni slices and extra cheese.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
-                                <button class="btn btn-sm btn-dark rounded-pill px-3">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
