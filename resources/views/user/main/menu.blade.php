@@ -65,7 +65,7 @@
                             <p class="card-text text-muted small">J{{ $menu->detail }}</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
-                                <button class="btn btn-sm btn-dark rounded-pill px-3">Add to Cart</button>
+                                <button class="btn btn-sm btn-dark rounded-pill px-3" onclick="addToCart({{ json_encode($menu) }})">Add to Cart</button>
                             </div>
                         </div>
                     </div>

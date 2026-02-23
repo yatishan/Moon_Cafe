@@ -36,4 +36,8 @@ class HomeController extends Controller
             "categories" => $categories
         ]);
     }
+
+    public function cart(){
+        return view('user.main.cart');
+    }
 }
