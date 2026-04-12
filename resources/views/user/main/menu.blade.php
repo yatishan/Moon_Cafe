@@ -1,28 +1,5 @@
 @extends('user.layout.master')
 @section('content')
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-warning" href="index.html"><i class="fas fa-utensils me-2"></i>TasteBites</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link active text-warning" href="#">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#booking">Booking</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-warning position-relative" href="#">
-                            <i class="fas fa-shopping-cart"></i> Cart
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <section class="bg-white py-5 shadow-sm">
         <div class="container">
             <div class="row justify-content-center text-center">
