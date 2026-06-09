@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('menu_id')->nullable();
             $table->integer('price');
             $table->integer('qty');
+            $table->string('addons');
             $table->timestamps();
             $table->foreign('order_id')
                   ->references('id')->on('orders')

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\MenuAddonCategoryController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\User\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, "index"]);
@@ -79,7 +80,18 @@ Route::get('/', [HomeController::class, "index"]);
 
     //user
     Route::get('/menu',[HomeController::class,'menu']);
+    Route::get('/menu/detail/{id}',[HomeController::class,'menuDetail'])->name('menu.detail');
     Route::get('/menu/{cat_id}',[HomeController::class,'category']);
     Route::get('/cart',[HomeController::class,'cart'])->name('cart.index');;
     Route::post('/place-order',[HomeController::class,'store'])->name('order.store');;
     // end user
+    Route::get('/payment',function(){
+        return view("user.main.payment");
+    });
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Auth::routes();

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class AddonCategory extends Model
 {
     public function addons(){
-        return $this->hasMany(Addon::class);
+        return $this->hasMany(Addon::class,"addcat_id");
     }
 }
